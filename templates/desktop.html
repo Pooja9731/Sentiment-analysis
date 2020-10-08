@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            background-color: #22313e;
+        }
+
+        .top {
+            
+            font-size: 50px;
+            color: #ff9800cc;
+            font-family: 'Abril Fatface', cursive;
+        }
+
+        .down {
+            
+            font-size: large;
+            color: #a4b6bfc2;
+        }
+
+        #one {
+        
+            height: 30px;
+            width: 100px;
+            background-color: #00ff80;
+        }
+        .last {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            display: inline-block;
+
+        }
+
+        .last img {
+            width: 250px;
+            height: 200px;
+        }
+        
+
+        .foo {
+            
+            color: #a4b6bfc2;
+        }
+
+        .last {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            display: inline-block;
+
+        }
+
+
+        .last img {
+            width: 250px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        
+        <div class="last">
+            <img src="https://cdn.dribbble.com/users/3823197/screenshots/6867534/smile2.0_dribble_hello.gif" alt=""
+                id="top">
+           
+
+        </div>
+    </header>
+    <h1 class="top">&nbsp;SENTIMENT PREDICTION</h1>
+    <div class="down">
+        <form action="{{ url_for('home') }}" method="POST">
+            <label for="prod">&nbsp;&nbsp;&nbsp; <b>Product link:</b> </label>
+            <input type="text" id="prod" name="prod"><br><br>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button id="one" type="submit" name="submit">Predict</b></button>
+        </form>
+
+    </div>
+    </form>
+    </div>
+
+
+    <!-- Footer -->
+    <div class='footer'>
+    </div>
+    <p class='foo'>&nbsp;&nbsp;&nbsp; Made with ❤️ by Pooja,Chandan,Dibu,Aishwarya,Gayatri.</p>
+    </div>
+    <br>
+    <br>
+    <div class="foo">
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;{{prediction}}<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;{{plots}}<br>
+        
+    </div>
+</body>
+
+</html>
+
+
+{% if result != None %}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="data:image/png;base64,{{ result }}" \width="400" height="200">
+{% endif %}
